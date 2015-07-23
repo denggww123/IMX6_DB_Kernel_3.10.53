@@ -1,0 +1,35 @@
+menu "QiYang misc driver support"
+
+config WATCH_DOG
+	tristate "WATCH_DOG FOR QIYANG BOARD"
+	help
+    If you say yes here you get support for the WATCH_DOG
+
+    This driver can also be built as a module.  If so, the module
+    will be called WATCH_DOG_MODULE.
+
+config RELAY_DRIVER
+   tristate "RELAY DRIVER FOR QIYANG BOARD"
+   help
+    If you say yes here you get support for the Relay
+
+    This driver can also be built as a module.  If so, the module
+    will be called RELAY_DRIVER_MODULE.
+
+config BUZZER
+    tristate "BUZZER FOR QIYANG IMX6 BOARD"
+    help
+      If you say yes here you get support for the Buzzer
+
+      This driver can also be built as a module.  If so, the module
+      will be called buzzer.
+
+config IMX6_GPIO_TEST
+	  tristate "IMX6 GPIO TEST FOR QIYANG BOARD"
+    help
+     If you say yes here you get support for the Gpio_test_driver
+
+     This driver can also be built as a module.  If so, the module
+     will be called Gpio_test_driver.config IMX6_GPIO_TEST
+
+endmenu
