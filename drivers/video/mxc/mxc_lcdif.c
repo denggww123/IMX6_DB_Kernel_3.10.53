@@ -56,7 +56,7 @@ static struct fb_videomode lcdif_modedb[] = {
 	0,},
 	{
 	/* 480x272 @ 60 Hz , pixel clk @ 32MHz */
-	"QY-LCD-480X272", 60, 480, 272, 9000, 10, 10, 30, 6, 96, 2,
+	"QY-LCD-480X272", 60, 480, 272, KHZ2PICOS(9009), 2, 41,10, 2, 2, 2,
 	FB_SYNC_CLK_LAT_FALL,
 	//FB_SYNC_CLK_IDLE_EN,
 	FB_VMODE_NONINTERLACED,

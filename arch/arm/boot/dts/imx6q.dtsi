@@ -156,7 +156,6 @@
 			status = "disabled";
 		};
 
-
 		aips-bus@02000000 { /* AIPS1 */
 			spba-bus@02000000 {
 				ecspi5: ecspi@02018000 {
@@ -274,8 +273,8 @@
 			>;
 		};
 	};
-
-  ecspi5 {
+	
+ ecspi5 {
 	pinctrl_ecspi5_1: ecspi5grp-1 {
 		fsl,pins = <
 			MX6QDL_PAD_SD1_CLK__ECSPI5_SCLK 	 0x100b1

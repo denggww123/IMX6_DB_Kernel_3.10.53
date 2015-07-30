@@ -21,6 +21,7 @@
 	compatible = "fsl,imx6q-sabresd", "fsl,imx6q";
 };
 
+
 &i2c2 {
 	pmic: pfuze100@08 {
 		compatible = "fsl,pfuze100";
@@ -138,6 +139,7 @@
 	status = "okay";
 };
 
+/*
 &mxcfb2 {
 	status = "okay";
 };
@@ -153,4 +155,4 @@
 &sata {
 	status = "okay";
 };
-
+*/
