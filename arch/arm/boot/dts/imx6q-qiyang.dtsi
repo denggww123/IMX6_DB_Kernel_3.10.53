@@ -338,6 +338,33 @@
 		fsl,phy_reg_cksymtx = <0x800d>;
 		status = "okay";
 	};
+
+
+	&ecspi5 {
+		fsl,spi-num-chipselects = <3>;
+		cs-gpios = <&gpio1 17 0>,<&gpio1 19 0>,<&gpio1 21 0>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_ecspi5_1>;
+		status = "okay";
+
+			dac0: dh2228@0{
+			compatible = "rohm,dh2228fv";
+			reg = <0>;
+			spi-max-frequency = <100000>;
+			};
+
+			dac1: dh2228@1{
+			compatible = "rohm,dh2228fv";
+			reg = <1>;
+			spi-max-frequency = <100000>;
+			};
+
+			dac2: dh2228@2{
+			compatible = "rohm,dh2228fv";
+			reg = <2>;
+			spi-max-frequency = <100000>;
+			};	 
+	};
 	
 	&i2c1 {
 		clock-frequency = <100000>;
