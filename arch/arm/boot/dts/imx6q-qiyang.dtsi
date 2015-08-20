@@ -28,8 +28,8 @@
 			reg_usb_otg_vbus: usb_otg_vbus {
 				compatible = "regulator-fixed";
 				regulator-name = "usb_otg_vbus";
-				regulator-min-microvolt = <5000000>;
-				regulator-max-microvolt = <5000000>;
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
 				gpio = <&gpio6 18 0>;
 				enable-active-high;
 			};
@@ -37,8 +37,8 @@
 			reg_usb_h1_vbus: usb_h1_vbus {
 				compatible = "regulator-fixed";
 				regulator-name = "usb_h1_vbus";
-				regulator-min-microvolt = <5000000>;
-				regulator-max-microvolt = <5000000>;
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
 				gpio = <&gpio1 10 0>;
 				enable-active-high;
 			};
@@ -47,6 +47,8 @@
 			reg_audio: tlv320aic3x_supply {
 				compatible = "regulator-fixed";
 				regulator-name = "tlv320aic3x-supply";
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
 			};
 	
 			reg_sensor: sensor_supply {
@@ -150,6 +152,7 @@
 		sound {
 			 compatible = "fsl,imx-audio-tlv320aic3x";
 			 model = "tlv320aic3x-audio";
+			 vcc-supply = <&ads7846reg>;
 			 //cpu-dai = <&ssi2>;  
 			 ssi-controller = <&ssi2>;			//must be care
 			 audio-codec = <&codec>;
@@ -242,7 +245,7 @@
 			pinctrl-0 = <&pinctrl_ipu1_1>;
 			status = "okay";
 		};
-	
+		
 		v4l2_cap_0 {
 			compatible = "fsl,imx6q-v4l2-capture";
 			ipu_id = <0>;
@@ -258,12 +261,13 @@
 			mclk_source = <0>;
 			status = "okay";
 		};
-	
+
+
 		v4l2_out {
 			compatible = "fsl,mxc_v4l2_output";
 			status = "okay";
 		};
-		
+
 	};
  
 	&caam_sm {
@@ -371,7 +375,7 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_i2c1_2>;
 		status = "okay";
-	
+
 		ov564x: ov564x@3c {
 			compatible = "ovti,ov564x";
 			reg = <0x3c>;
@@ -402,7 +406,7 @@
 			 mclk = <24000000>;
 			 mclk_source = <0>;
 			 cvbs;
-		 };
+		 };	 
 	};
 	
 	&i2c2 {
@@ -587,7 +591,7 @@
 		/* FIXME: RTS not compatible with RS485 */
 	&uart2 {
 		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_uart2_2>;
+		pinctrl-0 = <&pinctrl_uart2_1>;
 		fsl,uart-has-rtscts;
 		status = "okay";
 	};
